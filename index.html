@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    >
+    <meta name="theme-color" content="#07131c">
+    <title>Number Run — Math Runner</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="src/random.js"></script>
+    <script defer src="src/equations.js"></script>
+    <script defer src="src/renderer.js"></script>
+    <script defer src="src/main.js"></script>
+  </head>
+  <body>
+    <canvas id="game" aria-label="Number Run math runner game"></canvas>
+
+    <div class="hud" aria-hidden="true">
+      <div class="top-bar">
+        <div class="brand">
+          A quick mind game
+          <span>NUMBER RUN</span>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-label">Distance</div>
+            <div class="stat-value"><em id="distance">0</em> m</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Score</div>
+            <div class="stat-value" id="score">0</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Best</div>
+            <div class="stat-value" id="best">0 <small>m</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-bar">
+        <div class="hint desktop-hint">
+          <span class="key">←</span>
+          <span class="key">→</span>
+          <span>Change lane</span>
+          <span class="hint-copy">Pick the correct answer.</span>
+        </div>
+        <div class="hint mobile-hint">Swipe left or right to choose</div>
+        <div id="level">GATE 1 · WARM UP</div>
+      </div>
+    </div>
+
+    <div class="equation-prompt" aria-hidden="true">
+      <div class="equation-label">Choose the true answer</div>
+      <div class="equation-text" id="question">77 + 33 <b>= ?</b></div>
+    </div>
+
+    <div class="overlay" id="overlay">
+      <section class="card">
+        <div class="eyebrow" id="eyebrow">A runner for your brain</div>
+        <h1 id="title">Run the<br><span>numbers.</span></h1>
+        <p id="copy">
+          Solve the centered problem, then run through the gate with its
+          correct answer. Equations get a little harder as you go.
+        </p>
+
+        <div class="pace-title">Choose your pace</div>
+        <div class="pace-picker" role="group" aria-label="Time before each gate">
+          <button class="pace-option" type="button" data-seconds="3" aria-pressed="false">
+            <strong>3s</strong> SUPER
+          </button>
+          <button class="pace-option" type="button" data-seconds="5" aria-pressed="false">
+            <strong>5s</strong> HARD
+          </button>
+          <button class="pace-option active" type="button" data-seconds="7" aria-pressed="true">
+            <strong>7s</strong> NORMAL
+          </button>
+          <button class="pace-option" type="button" data-seconds="10" aria-pressed="false">
+            <strong>10s</strong> EASY
+          </button>
+        </div>
+
+        <div class="features">
+          <span class="pill">+ Add</span>
+          <span class="pill">− Subtract</span>
+          <span class="pill">× Multiply</span>
+          <span class="pill">÷ Divide</span>
+          <span class="pill">Each gate gets a little harder</span>
+        </div>
+
+        <div class="result" id="result" hidden></div>
+        <button class="play" id="play" type="button">
+          START RUN <span aria-hidden="true">↗</span>
+        </button>
+        <span class="fine">← → / A D to move · swipe on touch screens</span>
+      </section>
+    </div>
+  </body>
+</html>
