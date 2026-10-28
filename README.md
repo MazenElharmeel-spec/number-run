@@ -36,6 +36,4 @@ page structure and `styles.css` holds presentation. The files in `src/` handle
 game flow, drawing, math choices, and random generation.
 
 Gate generation uses a small pseudo-random generator seeded with fresh device
-entropy for each run, and exactly one answer is correct. Machine-learning
-frameworks are not needed for this game: they would add download and startup
-cost without improving equation generation or lane choices.
+entropy for each run, and exactly one answer is correct. 
